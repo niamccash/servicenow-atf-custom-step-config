@@ -1,1 +1,1 @@
-# servicenow-atf-custom-step-config
+# Custom Step Configurations for ServiceNow's Automated Test Framework (ATF)
