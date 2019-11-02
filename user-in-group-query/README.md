@@ -6,10 +6,10 @@ Selects a user based on Group membership.  Perform a database query to verify if
 
 ## Inputs
 
-User (u_user) - Reference
+User (u_user) - Reference <br/>
 Group (u_group) - Reference 
 
 ## Outputs
 
-User (u_user) - Reference
+User (u_user) - Reference <br/>
 Table (u_table) - Table Name
