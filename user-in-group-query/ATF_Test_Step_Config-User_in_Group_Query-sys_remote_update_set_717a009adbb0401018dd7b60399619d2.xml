@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?><unload unload_date="2019-10-31 18:17:36">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description/>
+<inserted/>
+<name>ATF Custom Step Config - User in Group Query</name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>d2affbcedb70401018dd7b60399619d2</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>niamccash</sys_created_by>
+<sys_created_on>2019-10-31 18:17:36</sys_created_on>
+<sys_id>717a009adbb0401018dd7b60399619d2</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>niamccash</sys_updated_by>
+<sys_updated_on>2019-10-31 18:17:36</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_documentation_var__m_atf_output_variable_e69e738edb70401018dd7b60399619ac_u_user_en</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_documentation element="u_user" label="User" language="en" table="var__m_atf_output_variable_e69e738edb70401018dd7b60399619ac"><sys_documentation action="INSERT_OR_UPDATE"><element>u_user</element><help/><hint/><label>User</label><language>en</language><name>var__m_atf_output_variable_e69e738edb70401018dd7b60399619ac</name><plural>User</plural><sys_class_name>sys_documentation</sys_class_name><sys_created_by>niamccash</sys_created_by><sys_created_on>2019-10-31 17:27:15</sys_created_on><sys_id>54fe7f8edb70401018dd7b6039961926</sys_id><sys_mod_count>0</sys_mod_count><sys_name>User</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_documentation_var__m_atf_output_variable_e69e738edb70401018dd7b60399619ac_u_user_en</sys_update_name><sys_updated_by>niamccash</sys_updated_by><sys_updated_on>2019-10-31 17:27:15</sys_updated_on><url/><url_target/></sys_documentation></sys_documentation></record_update>]]></payload>
+<payload_hash>789513722</payload_hash>
+<remote_update_set display_value="ATF Custom Step Config - User in Group Query">717a009adbb0401018dd7b60399619d2</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>niamccash</sys_created_by>
+<sys_created_on>2019-10-31 18:17:36</sys_created_on>
+<sys_id>357a009adbb0401018dd7b60399619d4</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16e22db6abd0000001</sys_recorded_at>
+<sys_updated_by>niamccash</sys_updated_by>
+<sys_updated_on>2019-10-31 18:17:36</sys_updated_on>
+<table>var__m_atf_output_variable_e69e738edb70401018dd7b60399619ac</table>
+<target_name>.User</target_name>
+<type>Field Label</type>
+<update_domain>global</update_domain>
+<update_guid>98fe7f8e53704010c7ad931f9e823634</update_guid>
+<update_guid_history>98fe7f8e53704010c7ad931f9e823634:789513722,90fe7f8e1570401048d4b118411c0631:789513722</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_atf_step_config_e69e738edb70401018dd7b60399619ac</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_atf_step_config"&gt;&lt;sys_atf_step_config action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;batch_order_constraint/&gt;&lt;can_mutate_page&gt;false&lt;/can_mutate_page&gt;&lt;category display_value="Server"&gt;317c4dc20b202200a8d7a12cf6673aa8&lt;/category&gt;&lt;class_name/&gt;&lt;class_type&gt;script&lt;/class_type&gt;&lt;description_generator&gt;&lt;![CDATA[function generateDescription() {
+    // the global variable 'step' represents the current glide record
+    var description = "";
+	var groupGr = new GlideRecord("sys_user_group");
+	if (groupGr.get(step.inputs.u_group))
+		description = gs.getMessage("Query for user(s) in {0} group", [groupGr.getDisplayValue()]);
+			
+	return description;
+}
+ generateDescription();
+]]&gt;&lt;/description_generator&gt;&lt;html_description&gt;&lt;![CDATA[&lt;p&gt;Perform a database query to verify if a user record matching the conditions set in this step are met.  If no user is specified in the condition, the first user in the group is returned.&lt;/p&gt;]]&gt;&lt;/html_description&gt;&lt;icon&gt;icon-article-document&lt;/icon&gt;&lt;inputs/&gt;&lt;name&gt;User in Group Query&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;outputs/&gt;&lt;step_env display_value="Server - Independent"&gt;6c2bcea1870312009dccc9ded0e3ecca&lt;/step_env&gt;&lt;step_execution_generator&gt;&lt;![CDATA[// The inputs are a map of the variables defined in the inputs related list below.
+// Inputs are consumed in the step configuration. Input
+// values may be hardcoded or mapped from the outputs of a previous step.
+// If a test author using your step uses mapping to pass in an output from a previous 
+// test step then when referencing the input variable the mapping will be resolved 
+// automatically
+//  Example:
+//      var myRecords = new GlideRecord(inputs.table);
+//
+// The outputs are a map of the variables defined in the outputs related list.
+// Outputs should be set (assigned) in order to pass data out of a test step that
+// can be consumed my mapping as an input to subsequent steps. 
+//  Example:
+//      outputs.table = gr.getRecordClassName()
+//
+//
+// Note that inputs and outputs are strongly typed as defined in their variable definition.
+// Their behavior is the same as a dictionary defined field of the same type in a table.
+//
+// The stepResult is a simple API for controlling the step pass/fail and logging with three
+// methods:
+//      stepResult.setFailed: Causes step to fail
+//
+//      stepResult.setSuccess: Causes step to succeed
+//
+//      stepResult.setOutputMessage: Log a message to step results after step executes.
+//            Can only be called once or will overwrite previous 
+//            message
+//
+// If neither setFailed or setSuccess is called the default is to succeed.
+//
+// See 'Record Query' for an example of a scripted step config 
+// or see test 'Check change approvals get generated'
+//
+// Example usage of step timeout in script
+//      var counter = 0;
+//      // 'timeout' is a field on the step form
+//      while (counter &lt;= timeout) {
+//            if (desiredOutcome) {
+//                stepResult.setOutputMessage('Success!');
+//                stepResult.setSuccess();
+//                return;
+//            }
+//            counter++;
+//            gs.sleep(1000);
+//      }
+//
+//      // desired outcome did not occur within the timeout
+//      stepResult.setOutputMessage('Failure!');
+//      stepResult.setFailed();
+//
+(function executeStep(inputs, outputs, stepResult, timeout) {
+	var gr = new GlideRecord('sys_user');
+	if (inputs.u_user)
+		gr.addQuery('sys_id', inputs.u_user);
+	var grMember = gr.addJoinQuery('sys_user_grmember');
+	grMember.addCondition('group', inputs.u_group.sys_id);
+	gr.query();
+	if (gr.next()) {
+		outputs.u_table = gr.getRecordClassName();
+		outputs.u_user = gr.getUniqueValue();
+		stepResult.setOutputMessage('Success!');
+		stepResult.setSuccess();
+		return;
+	}
+	stepResult.setOutputMessage('Failure: ' + gr.getEncodedQuery());
+    stepResult.setFailed();
+	
+}(inputs, outputs, stepResult, timeout));
+]]&gt;&lt;/step_execution_generator&gt;&lt;sys_class_name&gt;sys_atf_step_config&lt;/sys_class_name&gt;&lt;sys_created_by&gt;niamccash&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2019-10-31 17:26:07&lt;/sys_created_on&gt;&lt;sys_id&gt;e69e738edb70401018dd7b60399619ac&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;User in Group Query&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_atf_step_config_e69e738edb70401018dd7b60399619ac&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;niamccash&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2019-10-31 17:26:37&lt;/sys_updated_on&gt;&lt;template_reminder&gt;Select a User based on Group membership.&lt;/template_reminder&gt;&lt;type display_value="Test Step" name="sys_atf_step"&gt;b6517806db34001018dd7b603996192b&lt;/type&gt;&lt;wizard_redirect/&gt;&lt;/sys_atf_step_config&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=e69e738edb70401018dd7b60399619ac"/&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=e69e738edb70401018dd7b60399619ac"/&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-2069454919</payload_hash>
+<remote_update_set display_value="ATF Custom Step Config - User in Group Query">717a009adbb0401018dd7b60399619d2</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>niamccash</sys_created_by>
+<sys_created_on>2019-10-31 18:17:36</sys_created_on>
+<sys_id>397a009adbb0401018dd7b60399619d3</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16e22dad68a0000001</sys_recorded_at>
+<sys_updated_by>niamccash</sys_updated_by>
+<sys_updated_on>2019-10-31 18:17:36</sys_updated_on>
+<table/>
+<target_name>User in Group Query</target_name>
+<type>Test Step Config</type>
+<update_domain>global</update_domain>
+<update_guid>47ce734e96704010cb59e9baef0f004e</update_guid>
+<update_guid_history>47ce734e96704010cb59e9baef0f004e:-2069454919,7baefb4e357040104a1cb9e06ce184d9:1555181113</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_documentation_var__m_atf_output_variable_e69e738edb70401018dd7b60399619ac_u_table_en</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_documentation element="u_table" label="Table" language="en" table="var__m_atf_output_variable_e69e738edb70401018dd7b60399619ac"><sys_documentation action="INSERT_OR_UPDATE"><element>u_table</element><help/><hint/><label>Table</label><language>en</language><name>var__m_atf_output_variable_e69e738edb70401018dd7b60399619ac</name><plural>Table</plural><sys_class_name>sys_documentation</sys_class_name><sys_created_by>niamccash</sys_created_by><sys_created_on>2019-10-31 17:27:43</sys_created_on><sys_id>cb0f7f8edb70401018dd7b603996193b</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Table</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_documentation_var__m_atf_output_variable_e69e738edb70401018dd7b60399619ac_u_table_en</sys_update_name><sys_updated_by>niamccash</sys_updated_by><sys_updated_on>2019-10-31 17:27:43</sys_updated_on><url/><url_target/></sys_documentation></sys_documentation></record_update>]]></payload>
+<payload_hash>394296336</payload_hash>
+<remote_update_set display_value="ATF Custom Step Config - User in Group Query">717a009adbb0401018dd7b60399619d2</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>niamccash</sys_created_by>
+<sys_created_on>2019-10-31 18:17:36</sys_created_on>
+<sys_id>717a009adbb0401018dd7b60399619d4</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16e22dbd7ce0000001</sys_recorded_at>
+<sys_updated_by>niamccash</sys_updated_by>
+<sys_updated_on>2019-10-31 18:17:36</sys_updated_on>
+<table>var__m_atf_output_variable_e69e738edb70401018dd7b60399619ac</table>
+<target_name>.Table</target_name>
+<type>Field Label</type>
+<update_domain>global</update_domain>
+<update_guid>0b0fff8ed4704010478d9a87fdd5a56b</update_guid>
+<update_guid_history>0b0fff8ed4704010478d9a87fdd5a56b:394296336,470fff8eb6704010816a81b8a1df5668:394296336</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>atf_output_variable_31febf8edb70401018dd7b603996191b</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="atf_output_variable"&gt;&lt;atf_output_variable action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;array_denormalized&gt;false&lt;/array_denormalized&gt;&lt;attributes&gt;element_mapping_provider=com.glide.automated_testing_framework.ATFVariableElementMapper&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label/&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;u_table&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_type display_value=""&gt;table_name&lt;/internal_type&gt;&lt;label&gt;Table&lt;/label&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;max_length&gt;80&lt;/max_length&gt;&lt;model display_value="User in Group Query"&gt;e69e738edb70401018dd7b60399619ac&lt;/model&gt;&lt;model_id&gt;e69e738edb70401018dd7b60399619ac&lt;/model_id&gt;&lt;model_table/&gt;&lt;name&gt;var__m_atf_output_variable_e69e738edb70401018dd7b60399619ac&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;100&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;sizeclass/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;atf_output_variable&lt;/sys_class_name&gt;&lt;sys_created_by&gt;niamccash&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2019-10-31 17:27:42&lt;/sys_created_on&gt;&lt;sys_id&gt;31febf8edb70401018dd7b603996191b&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;var__m_atf_output_variable_e69e738edb70401018dd7b60399619ac&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;atf_output_variable_31febf8edb70401018dd7b603996191b&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;niamccash&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2019-10-31 17:27:42&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/atf_output_variable&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-897119826</payload_hash>
+<remote_update_set display_value="ATF Custom Step Config - User in Group Query">717a009adbb0401018dd7b60399619d2</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>niamccash</sys_created_by>
+<sys_created_on>2019-10-31 18:17:36</sys_created_on>
+<sys_id>757a009adbb0401018dd7b60399619d3</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16e22dbd7bc0000001</sys_recorded_at>
+<sys_updated_by>niamccash</sys_updated_by>
+<sys_updated_on>2019-10-31 18:17:36</sys_updated_on>
+<table/>
+<target_name/>
+<type>Output Variables</type>
+<update_domain>global</update_domain>
+<update_guid>830fff8e2770401077b8411cdde1376a</update_guid>
+<update_guid_history>830fff8e2770401077b8411cdde1376a:-897119826,8f0fff8e38704010dee95fe6e51db666:-982191938,0b0fff8ec3704010f04f46751bb7da62:-897119826</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>atf_output_variable_1cdeb78edb70401018dd7b603996197c</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="atf_output_variable"&gt;&lt;atf_output_variable action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;array_denormalized&gt;false&lt;/array_denormalized&gt;&lt;attributes&gt;element_mapping_provider=com.glide.automated_testing_framework.ATFVariableElementMapper&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label/&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;u_user&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_type display_value="Reference"&gt;reference&lt;/internal_type&gt;&lt;label&gt;User&lt;/label&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;max_length&gt;32&lt;/max_length&gt;&lt;model display_value="User in Group Query"&gt;e69e738edb70401018dd7b60399619ac&lt;/model&gt;&lt;model_id&gt;e69e738edb70401018dd7b60399619ac&lt;/model_id&gt;&lt;model_table/&gt;&lt;name&gt;var__m_atf_output_variable_e69e738edb70401018dd7b60399619ac&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;100&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_roles/&gt;&lt;reference display_value="" name="sys_user"&gt;sys_user&lt;/reference&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;sizeclass/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;atf_output_variable&lt;/sys_class_name&gt;&lt;sys_created_by&gt;niamccash&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2019-10-31 17:27:14&lt;/sys_created_on&gt;&lt;sys_id&gt;1cdeb78edb70401018dd7b603996197c&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;var__m_atf_output_variable_e69e738edb70401018dd7b60399619ac&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;atf_output_variable_1cdeb78edb70401018dd7b603996197c&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;niamccash&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2019-10-31 17:27:14&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/atf_output_variable&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-89956455</payload_hash>
+<remote_update_set display_value="ATF Custom Step Config - User in Group Query">717a009adbb0401018dd7b60399619d2</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>niamccash</sys_created_by>
+<sys_created_on>2019-10-31 18:17:36</sys_created_on>
+<sys_id>b17a009adbb0401018dd7b60399619d3</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16e22db6a9e0000001</sys_recorded_at>
+<sys_updated_by>niamccash</sys_updated_by>
+<sys_updated_on>2019-10-31 18:17:36</sys_updated_on>
+<table/>
+<target_name/>
+<type>Output Variables</type>
+<update_domain>global</update_domain>
+<update_guid>90fe7f8e36704010c016e66d092c2633</update_guid>
+<update_guid_history>90fe7f8e36704010c016e66d092c2633:-89956455,98fe7f8edb7040105748e560447f972f:1777249257,dcfe7f8eb9704010228cd8d929a1dd2a:-89956455</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>atf_input_variable_631f73cedb70401018dd7b6039961948</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="atf_input_variable"&gt;&lt;atf_input_variable action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;array_denormalized&gt;false&lt;/array_denormalized&gt;&lt;attributes&gt;element_mapping_provider=com.glide.automated_testing_framework.ATFVariableElementMapper&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label/&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;u_group&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_type display_value="Reference"&gt;reference&lt;/internal_type&gt;&lt;label&gt;Group&lt;/label&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;max_length&gt;32&lt;/max_length&gt;&lt;model display_value="User in Group Query"&gt;e69e738edb70401018dd7b60399619ac&lt;/model&gt;&lt;model_id&gt;e69e738edb70401018dd7b60399619ac&lt;/model_id&gt;&lt;model_table/&gt;&lt;name&gt;var__m_atf_input_variable_e69e738edb70401018dd7b60399619ac&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;100&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_roles/&gt;&lt;reference display_value="" name="sys_user_group"&gt;sys_user_group&lt;/reference&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;sizeclass/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;atf_input_variable&lt;/sys_class_name&gt;&lt;sys_created_by&gt;niamccash&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2019-10-31 17:28:20&lt;/sys_created_on&gt;&lt;sys_id&gt;631f73cedb70401018dd7b6039961948&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;var__m_atf_input_variable_e69e738edb70401018dd7b60399619ac&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;atf_input_variable_631f73cedb70401018dd7b6039961948&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;niamccash&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2019-10-31 17:28:20&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/atf_input_variable&gt;&lt;/record_update&gt;</payload>
+<payload_hash>200303349</payload_hash>
+<remote_update_set display_value="ATF Custom Step Config - User in Group Query">717a009adbb0401018dd7b60399619d2</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>niamccash</sys_created_by>
+<sys_created_on>2019-10-31 18:17:36</sys_created_on>
+<sys_id>b57a009adbb0401018dd7b60399619d2</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16e22dc685b0000001</sys_recorded_at>
+<sys_updated_by>niamccash</sys_updated_by>
+<sys_updated_on>2019-10-31 18:17:36</sys_updated_on>
+<table/>
+<target_name/>
+<type>Input Variables</type>
+<update_domain>global</update_domain>
+<update_guid>c43fb3cea8704010ee37c754efba39a6</update_guid>
+<update_guid_history>c43fb3cea8704010ee37c754efba39a6:200303349,403fb3cee8704010e57fe74b5e41f6a3:1618679604,c43fb3ce1a704010106cea5a96e88d9e:200303349</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_documentation_var__m_atf_input_variable_e69e738edb70401018dd7b60399619ac_u_user_en</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_documentation element="u_user" label="User" language="en" table="var__m_atf_input_variable_e69e738edb70401018dd7b60399619ac"><sys_documentation action="INSERT_OR_UPDATE"><element>u_user</element><help/><hint/><label>User</label><language>en</language><name>var__m_atf_input_variable_e69e738edb70401018dd7b60399619ac</name><plural>User</plural><sys_class_name>sys_documentation</sys_class_name><sys_created_by>niamccash</sys_created_by><sys_created_on>2019-10-31 17:28:40</sys_created_on><sys_id>c14f37cedb70401018dd7b603996197c</sys_id><sys_mod_count>0</sys_mod_count><sys_name>User</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_documentation_var__m_atf_input_variable_e69e738edb70401018dd7b60399619ac_u_user_en</sys_update_name><sys_updated_by>niamccash</sys_updated_by><sys_updated_on>2019-10-31 17:28:40</sys_updated_on><url/><url_target/></sys_documentation></sys_documentation></record_update>]]></payload>
+<payload_hash>-571405132</payload_hash>
+<remote_update_set display_value="ATF Custom Step Config - User in Group Query">717a009adbb0401018dd7b60399619d2</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>niamccash</sys_created_by>
+<sys_created_on>2019-10-31 18:17:36</sys_created_on>
+<sys_id>bd7a009adbb0401018dd7b60399619d3</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16e22dcb7460000001</sys_recorded_at>
+<sys_updated_by>niamccash</sys_updated_by>
+<sys_updated_on>2019-10-31 18:17:36</sys_updated_on>
+<table>var__m_atf_input_variable_e69e738edb70401018dd7b60399619ac</table>
+<target_name>.User</target_name>
+<type>Field Label</type>
+<update_domain>global</update_domain>
+<update_guid>c14f37cef97040106dfda36817023989</update_guid>
+<update_guid_history>c14f37cef97040106dfda36817023989:-571405132,8d4f37ced370401026b965bfbadd6c85:-571405132</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_documentation_var__m_atf_input_variable_e69e738edb70401018dd7b60399619ac_u_group_en</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_documentation element="u_group" label="Group" language="en" table="var__m_atf_input_variable_e69e738edb70401018dd7b60399619ac"><sys_documentation action="INSERT_OR_UPDATE"><element>u_group</element><help/><hint/><label>Group</label><language>en</language><name>var__m_atf_input_variable_e69e738edb70401018dd7b60399619ac</name><plural>Group</plural><sys_class_name>sys_documentation</sys_class_name><sys_created_by>niamccash</sys_created_by><sys_created_on>2019-10-31 17:28:20</sys_created_on><sys_id>083fb3cedb70401018dd7b603996199a</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Group</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_documentation_var__m_atf_input_variable_e69e738edb70401018dd7b60399619ac_u_group_en</sys_update_name><sys_updated_by>niamccash</sys_updated_by><sys_updated_on>2019-10-31 17:28:20</sys_updated_on><url/><url_target/></sys_documentation></sys_documentation></record_update>]]></payload>
+<payload_hash>1315727864</payload_hash>
+<remote_update_set display_value="ATF Custom Step Config - User in Group Query">717a009adbb0401018dd7b60399619d2</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>niamccash</sys_created_by>
+<sys_created_on>2019-10-31 18:17:36</sys_created_on>
+<sys_id>f97a009adbb0401018dd7b60399619d3</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16e22dc68750000001</sys_recorded_at>
+<sys_updated_by>niamccash</sys_updated_by>
+<sys_updated_on>2019-10-31 18:17:36</sys_updated_on>
+<table>var__m_atf_input_variable_e69e738edb70401018dd7b60399619ac</table>
+<target_name>.Group</target_name>
+<type>Field Label</type>
+<update_domain>global</update_domain>
+<update_guid>8c3fb3ce86704010de23f1b90111aaa7</update_guid>
+<update_guid_history>8c3fb3ce86704010de23f1b90111aaa7:1315727864,083fb3ce76704010ceb1978a32350ba4:1315727864</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>atf_input_variable_993ff3cedb70401018dd7b603996197b</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="atf_input_variable"&gt;&lt;atf_input_variable action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;array_denormalized&gt;false&lt;/array_denormalized&gt;&lt;attributes&gt;element_mapping_provider=com.glide.automated_testing_framework.ATFVariableElementMapper&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label/&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;u_user&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_type display_value="Reference"&gt;reference&lt;/internal_type&gt;&lt;label&gt;User&lt;/label&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;max_length&gt;32&lt;/max_length&gt;&lt;model display_value="User in Group Query"&gt;e69e738edb70401018dd7b60399619ac&lt;/model&gt;&lt;model_id&gt;e69e738edb70401018dd7b60399619ac&lt;/model_id&gt;&lt;model_table/&gt;&lt;name&gt;var__m_atf_input_variable_e69e738edb70401018dd7b60399619ac&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;100&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_roles/&gt;&lt;reference display_value="" name="sys_user"&gt;sys_user&lt;/reference&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;sizeclass/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;atf_input_variable&lt;/sys_class_name&gt;&lt;sys_created_by&gt;niamccash&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2019-10-31 17:28:40&lt;/sys_created_on&gt;&lt;sys_id&gt;993ff3cedb70401018dd7b603996197b&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;var__m_atf_input_variable_e69e738edb70401018dd7b60399619ac&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;atf_input_variable_993ff3cedb70401018dd7b603996197b&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;niamccash&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2019-10-31 17:28:40&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/atf_input_variable&gt;&lt;/record_update&gt;</payload>
+<payload_hash>530495745</payload_hash>
+<remote_update_set display_value="ATF Custom Step Config - User in Group Query">717a009adbb0401018dd7b60399619d2</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>niamccash</sys_created_by>
+<sys_created_on>2019-10-31 18:17:36</sys_created_on>
+<sys_id>fd7a009adbb0401018dd7b60399619d2</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>16e22dcb7300000001</sys_recorded_at>
+<sys_updated_by>niamccash</sys_updated_by>
+<sys_updated_on>2019-10-31 18:17:36</sys_updated_on>
+<table/>
+<target_name/>
+<type>Input Variables</type>
+<update_domain>global</update_domain>
+<update_guid>4d4f37ce9b704010420573e155545387</update_guid>
+<update_guid_history>4d4f37ce9b704010420573e155545387:530495745,094f37cefd7040107aaebb6449152a84:-1208653704,014f37ce8b70401050c00897c8b67780:530495745</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
