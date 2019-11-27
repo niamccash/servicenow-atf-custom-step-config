@@ -13,3 +13,5 @@ Group (u_group) - Reference
 
 User (u_user) - Reference <br/>
 Table (u_table) - Table Name
+
+![alt text](user-in-group-query.jpg)
